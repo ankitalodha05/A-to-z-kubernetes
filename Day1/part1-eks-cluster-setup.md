@@ -71,32 +71,6 @@ eksctl get nodegroup --cluster=<clusterName>
 
 ---
 
-## 7. Debugging and Accessing Pods
-
-### View Pod Logs
-
-To view the logs of a specific pod:
-
-```bash
-kubectl logs <pod-name>
-```
-
-### Access Pod Shell
-
-To access the shell of a running pod:
-
-```bash
-kubectl exec -it <pod-name> -- /bin/bash
-```
-
-### Inspect Files Inside Pod
-
-Once inside the pod shell, navigate to a directory and inspect files. For example:
-
-```bash
-cd /usr/share/nginx/html
-cat index.html
-```
 
 ---
 
