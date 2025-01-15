@@ -123,12 +123,13 @@ If for some reason resources like CloudFormation stacks are not fully deleted, y
 ### List all CloudFormation stacks:
 ```bash
 aws cloudformation list-stacks --region us-east-1
+```
 
 ### Delete specific stacks
 Replace <stack-name> with the stack names from the list:
 ```bash
 aws cloudformation delete-stack --stack-name <stack-name> --region us-east-1
-
+```
 ### Delete the SSH Key
 
 If required, manually delete the SSH key file:
