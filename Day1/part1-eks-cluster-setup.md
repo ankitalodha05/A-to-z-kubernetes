@@ -116,6 +116,19 @@ eksctl delete nodegroup --cluster=eksdemo1 --name=eksdemo1-ng-public1
 eksctl delete cluster --name=eksdemo1 --region=us-east-1
 ```
 
+## Force Cleanup (Advanced)
+
+If for some reason resources like CloudFormation stacks are not fully deleted, you can force delete them using the AWS CLI.
+
+### List all CloudFormation stacks:
+```bash
+aws cloudformation list-stacks --region us-east-1
+
+### Delete specific stacks
+Replace <stack-name> with the stack names from the list:
+```bash
+aws cloudformation delete-stack --stack-name <stack-name> --region us-east-1
+
 ### Delete the SSH Key
 
 If required, manually delete the SSH key file:
