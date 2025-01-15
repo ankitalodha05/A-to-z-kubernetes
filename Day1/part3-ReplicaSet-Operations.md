@@ -5,6 +5,29 @@
 kubectl create -f reploca-dem.yml
 ```
 
+## reploca-dem.yml Content
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-helloworld-rs
+  labels:
+    app: my-helloworld
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-helloworld
+  template:
+    metadata:
+      labels:
+        app: my-helloworld
+    spec:
+      containers:
+      - name: my-helloworld-app
+        image: stacksimplify/kube-helloworld:1.0.0
+```
+
 ## 2. View ReplicaSet and Pods
 ```bash
 kubectl get replicaset
@@ -54,3 +77,4 @@ kubectl options
 ### Updating ReplicaSet
 ```bash
 kubectl replace -f reploca-dem.yml
+```
